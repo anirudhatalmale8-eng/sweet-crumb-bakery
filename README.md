@@ -108,8 +108,17 @@ It's static files, so hosting is free and simple. Any of these work:
 - **Netlify / Cloudflare Pages** — drag the folder onto their dashboard.
 - **Existing host** — upload the whole folder by FTP.
 
-Then point `sweetcrumb.in` (or whichever domain) at it. Also update the
-`<link rel="canonical">` and `og:image` URLs in `<head>` to the real domain once it's live.
+It's already live here: **https://anirudhatalmale8-eng.github.io/sweet-crumb-bakery/**
+
+Then point `sweetcrumb.in` (or whichever domain) at it. When you do, search `<head>`
+for `anirudhatalmale8-eng.github.io` and replace every one with the real domain — that
+covers the canonical link, the WhatsApp link-preview tags, and the Google listing block.
+
+### The WhatsApp link preview
+
+`assets/img/og-image.png` is what shows up when someone pastes the link into WhatsApp.
+It was generated from `.checks/og.html` — edit that file and re-run it through a browser
+at 1200×630 to make a new one, or just replace the PNG with a photo at the same size.
 
 ---
 

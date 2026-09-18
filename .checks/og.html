@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{
+    width:1200px;height:630px;overflow:hidden;position:relative;
+    background:#F7EDE0;font-family:"Karla",sans-serif;
+    display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
+  }
+  .glow{position:absolute;right:-180px;top:-220px;width:760px;height:760px;border-radius:50%;
+    background:radial-gradient(circle,rgba(222,155,79,.45),rgba(222,155,79,0) 68%)}
+  .grain{position:absolute;inset:0;opacity:.32;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+  .copy{position:relative;z-index:2;padding:0 0 0 76px}
+  .eyebrow{font-size:17px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#B5541C;margin-bottom:26px}
+  h1{font-family:"Fraunces",serif;font-variation-settings:"SOFT" 70,"WONK" 1,"opsz" 144;
+     font-weight:600;font-size:118px;line-height:.86;letter-spacing:-.035em;color:#2C1B12}
+  h1 em{display:block;font-style:italic;color:#B5541C;margin-left:.1em}
+  p{font-size:23px;line-height:1.5;color:#6B4A34;margin-top:30px;max-width:24ch}
+  .hours{display:inline-flex;align-items:center;gap:11px;margin-top:34px;
+    background:#6E7551;color:#FDF8F1;padding:11px 22px;border-radius:999px;
+    font-size:15px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+  .led{width:9px;height:9px;border-radius:50%;background:#C9F2A8}
+  .art{position:relative;z-index:2;padding-right:56px}
+  .art img{width:100%;border:4px solid #8B3F13;border-radius:26px;box-shadow:16px 18px 0 rgba(44,27,18,.13)}
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="copy">
+    <div class="eyebrow">Neighbourhood bakery · Pune</div>
+    <h1>Sweet<em>Crumb</em></h1>
+    <p>Sourdough, butter croissants and mawa cake. Baked fresh every morning.</p>
+    <div class="hours"><span class="led"></span>Open every day, 8am – 8pm</div>
+  </div>
+  <div class="art"><img src="../assets/img/shop-front.svg" alt=""></div>
+  <div class="grain"></div>
+</body>
+</html>
