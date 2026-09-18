@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Illustration of a mawa cake and a slice on a plate">
+  <title>Mawa cake, the Pune way</title>
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9CFA6"/>
+      <stop offset="1" stop-color="#CE8A4E"/>
+    </linearGradient>
+    <filter id="grain4"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+
+  <rect width="640" height="800" fill="url(#bg4)"/>
+  <circle cx="320" cy="300" r="212" fill="#F4E0BB" opacity=".45"/>
+  <circle cx="320" cy="300" r="212" fill="none" stroke="#9A4715" stroke-width="3" opacity=".2"/>
+
+  <!-- table -->
+  <rect x="0" y="600" width="640" height="200" fill="#A9703A"/>
+  <rect x="0" y="592" width="640" height="16" rx="6" fill="#C08048"/>
+
+  <!-- whole cake -->
+  <g transform="translate(300 430)">
+    <ellipse cx="0" cy="118" rx="188" ry="26" fill="#7E3810" opacity=".25"/>
+    <ellipse cx="0" cy="96" rx="176" ry="34" fill="#EFE1C5"/>
+    <path d="M-176 96V-8a176 34 0 0 0 352 0V96a176 34 0 0 1-352 0Z" fill="#C0783C"/>
+    <path d="M-176 -8a176 34 0 0 0 352 0 176 34 0 0 0-352 0Z" fill="#D89A5C"/>
+    <ellipse cx="0" cy="-8" rx="140" ry="24" fill="#E3B279" opacity=".7"/>
+    <path d="M-176 34a176 34 0 0 0 352 0" stroke="#9A4715" stroke-width="4" fill="none" opacity=".35"/>
+    <!-- crumb speckle -->
+    <g fill="#8B3F13" opacity=".45">
+      <circle cx="-96" cy="52" r="4"/><circle cx="-38" cy="70" r="3"/><circle cx="30" cy="58" r="4"/>
+      <circle cx="96" cy="72" r="3.5"/><circle cx="130" cy="44" r="3"/><circle cx="-140" cy="40" r="3"/>
+    </g>
+    <!-- almonds on top -->
+    <g fill="#F6E7CA" stroke="#9A4715" stroke-width="2.5">
+      <ellipse cx="-46" cy="-14" rx="16" ry="9" transform="rotate(-18 -46 -14)"/>
+      <ellipse cx="6" cy="-24" rx="16" ry="9" transform="rotate(8 6 -24)"/>
+      <ellipse cx="58" cy="-10" rx="16" ry="9" transform="rotate(-6 58 -10)"/>
+    </g>
+  </g>
+
+  <!-- slice on plate -->
+  <g transform="translate(494 648)">
+    <ellipse cx="0" cy="18" rx="120" ry="24" fill="#F6EAD2"/>
+    <ellipse cx="0" cy="12" rx="120" ry="24" fill="#FDF6E8"/>
+    <path d="M-72 12V-64h96V12Z" fill="#C0783C"/>
+    <path d="M-72 -64h96l-22-22h-96Z" fill="#D89A5C"/>
+    <path d="M24 12V-64l-22-22V-6Z" fill="#A9611F"/>
+    <g fill="#8B3F13" opacity=".4">
+      <circle cx="-44" cy="-34" r="4"/><circle cx="-10" cy="-14" r="3"/><circle cx="6" cy="-44" r="3.5"/>
+    </g>
+  </g>
+
+  <rect width="640" height="800" filter="url(#grain4)" opacity=".14" style="mix-blend-mode:multiply"/>
+</svg>

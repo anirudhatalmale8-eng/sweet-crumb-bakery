@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 980" role="img" aria-label="Illustration of a bakery counter with loaves of bread, croissants and a cake stand">
+  <title>Sweet Crumb counter</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAE7C9"/>
+      <stop offset=".52" stop-color="#EFC894"/>
+      <stop offset="1" stop-color="#E2A96C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".34" r=".58">
+      <stop offset="0" stop-color="#FFF3DC" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#FFF3DC" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C56A28"/>
+      <stop offset="1" stop-color="#9A4715"/>
+    </linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <g id="loaf">
+      <ellipse cx="0" cy="4" rx="76" ry="44" fill="#9A4715" opacity=".35"/>
+      <ellipse cx="0" cy="-4" rx="76" ry="44" fill="#D98A3C"/>
+      <path d="M-76 -4a76 44 0 0 1 152 0" fill="#E7A257"/>
+      <path d="M-44 -16 l22 -16M-12 -22 l22 -16M20 -20 l22 -14" stroke="#8B3F13" stroke-width="7" stroke-linecap="round" fill="none" opacity=".8"/>
+      <ellipse cx="0" cy="-4" rx="76" ry="44" fill="none" stroke="#8B3F13" stroke-width="3.5" opacity=".5"/>
+    </g>
+
+    <g id="croissant">
+      <path d="M-48 12C-42-28-16-44 0-44S42-28 48 12C30-6 16-13 0-13S-30-6-48 12Z" fill="#E4A85C" stroke="#9A4715" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M-24-24C-18-12-18-4-20 2M0-31C4-17 4-8 2-2M24-24C18-12 18-4 20 2" stroke="#9A4715" stroke-width="3" fill="none" stroke-linecap="round" opacity=".75"/>
+    </g>
+
+    <g id="lamp">
+      <path d="M0 0V96" stroke="#5F3218" stroke-width="4"/>
+      <path d="M-34 140 L0 96 L34 140Z" fill="#8B3F13"/>
+      <ellipse cx="0" cy="140" rx="34" ry="8" fill="#F6D9A4"/>
+      <circle cx="0" cy="146" r="9" fill="#FFF0CF"/>
+    </g>
+  </defs>
+
+  <rect width="760" height="980" fill="url(#sky)"/>
+  <circle cx="380" cy="352" r="196" fill="#DF9346" opacity=".32"/>
+  <circle cx="380" cy="352" r="196" fill="none" stroke="#A9541C" stroke-width="3" opacity=".22"/>
+  <rect width="760" height="980" fill="url(#glow)"/>
+
+  <use href="#lamp" x="156" y="0"/>
+  <use href="#lamp" x="604" y="-34"/>
+
+  <!-- upper shelf -->
+  <g>
+    <rect x="72" y="456" width="616" height="16" rx="4" fill="url(#wood)"/>
+    <rect x="72" y="472" width="616" height="9" fill="#7E3810" opacity=".6"/>
+    <use href="#loaf" x="196" y="412" transform="rotate(-3 196 412)"/>
+    <use href="#loaf" x="380" y="416"/>
+    <use href="#loaf" x="564" y="412" transform="rotate(3 564 412)"/>
+  </g>
+
+  <!-- counter -->
+  <rect x="0" y="700" width="760" height="280" fill="url(#wood)"/>
+  <rect x="0" y="686" width="760" height="24" rx="6" fill="#D4762F"/>
+  <g stroke="#7E3810" stroke-width="3" opacity=".45">
+    <path d="M104 710V980M248 710V980M392 710V980M536 710V980M672 710V980"/>
+  </g>
+
+  <!-- board of croissants -->
+  <g>
+    <rect x="64" y="644" width="280" height="18" rx="9" fill="#6F4522"/>
+    <use href="#croissant" x="136" y="608" transform="rotate(-8 136 608)"/>
+    <use href="#croissant" x="248" y="612" transform="rotate(7 248 612)"/>
+  </g>
+
+  <!-- cake stand -->
+  <g>
+    <path d="M472 656h176l-22 26H494Z" fill="#6F4522"/>
+    <path d="M548 656v-14h24v14Z" fill="#6F4522"/>
+    <rect x="484" y="628" width="152" height="18" rx="9" fill="#EFD8B4"/>
+    <path d="M498 628v-58a62 62 0 0 1 124 0v58Z" fill="#C97A3E"/>
+    <path d="M498 596h124v14H498Z" fill="#F3E2C2"/>
+    <path d="M498 570a62 62 0 0 1 124 0c-16 12-34 6-52 14-20 8-42 0-72-14Z" fill="#E8B678"/>
+    <circle cx="560" cy="536" r="12" fill="#8C3A3A"/>
+    <path d="M560 524c4-10 12-12 18-10-4 8-10 11-18 10Z" fill="#6E7551"/>
+  </g>
+
+  <!-- little chalk sign propped on the counter -->
+  <g transform="rotate(-4 380 744)">
+    <rect x="330" y="720" width="102" height="52" rx="6" fill="#3A2B22" stroke="#6F4522" stroke-width="5"/>
+    <g stroke="#EFD8B4" stroke-width="3" fill="none" opacity=".8" stroke-linecap="round">
+      <path d="M346 742h70M346 754h46"/>
+    </g>
+  </g>
+
+  <rect width="760" height="980" filter="url(#grain)" opacity=".13" style="mix-blend-mode:multiply"/>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-label="Illustration of the Sweet Crumb shopfront with an awning and window display">
+  <title>The shop</title>
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E8CC"/>
+      <stop offset="1" stop-color="#E4B77F"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6E7551"/>
+      <stop offset="1" stop-color="#48503A"/>
+    </linearGradient>
+    <filter id="grain5"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+
+  <rect width="900" height="640" fill="url(#bg5)"/>
+  <circle cx="742" cy="118" r="84" fill="#DF9346" opacity=".35"/>
+
+  <!-- building -->
+  <rect x="120" y="120" width="660" height="470" fill="#E7D3B2"/>
+  <rect x="120" y="120" width="660" height="470" fill="none" stroke="#9A4715" stroke-width="5"/>
+
+  <!-- sign board -->
+  <rect x="150" y="148" width="600" height="86" rx="8" fill="#8B3F13"/>
+  <rect x="162" y="160" width="576" height="62" rx="5" fill="none" stroke="#E9C98F" stroke-width="3"/>
+  <text x="450" y="204" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic" fill="#F7EDE0" letter-spacing="2">Sweet Crumb</text>
+
+  <!-- awning -->
+  <g>
+    <path d="M132 246h636l34 78H98Z" fill="#B5541C"/>
+    <g fill="#EFD8B4">
+      <path d="M154 246h64l-34 78h-64Z"/>
+      <path d="M282 246h64l-34 78h-64Z"/>
+      <path d="M410 246h64l-34 78h-64Z"/>
+      <path d="M538 246h64l-34 78h-64Z"/>
+      <path d="M666 246h64l-34 78h-64Z"/>
+    </g>
+    <path d="M132 246h636l34 78H98Z" fill="none" stroke="#7E3810" stroke-width="5"/>
+    <path d="M98 324h704" stroke="#7E3810" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- window -->
+  <g>
+    <rect x="176" y="368" width="312" height="196" rx="6" fill="url(#glass)"/>
+    <rect x="176" y="368" width="312" height="196" rx="6" fill="none" stroke="#7E3810" stroke-width="7"/>
+    <path d="M332 368v196M176 466h312" stroke="#7E3810" stroke-width="6"/>
+    <path d="M196 388l60 60-60 60Z" fill="#FDF6E8" opacity=".14"/>
+    <!-- loaves in the window -->
+    <g>
+      <rect x="196" y="500" width="272" height="10" rx="5" fill="#C08048"/>
+      <ellipse cx="248" cy="486" rx="40" ry="18" fill="#E6A254"/>
+      <ellipse cx="340" cy="486" rx="40" ry="18" fill="#D9883A"/>
+      <ellipse cx="428" cy="486" rx="34" ry="16" fill="#E6A254"/>
+    </g>
+  </g>
+
+  <!-- door -->
+  <g>
+    <path d="M560 564V430a72 72 0 0 1 144 0v134Z" fill="#8B3F13"/>
+    <path d="M560 564V430a72 72 0 0 1 144 0v134Z" fill="none" stroke="#7E3810" stroke-width="6"/>
+    <path d="M584 548V432a48 48 0 0 1 96 0v116Z" fill="url(#glass)" opacity=".9"/>
+    <circle cx="676" cy="500" r="7" fill="#E9C98F"/>
+    <!-- open sign -->
+    <rect x="602" y="456" width="60" height="30" rx="4" fill="#F7EDE0" transform="rotate(-4 602 456)"/>
+    <text x="632" y="477" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#B5541C" transform="rotate(-4 602 456)">OPEN</text>
+  </g>
+
+  <!-- pavement + planter -->
+  <rect x="98" y="564" width="704" height="76" fill="#C9AE85"/>
+  <path d="M98 564h704" stroke="#9A4715" stroke-width="5"/>
+  <g>
+    <path d="M760 564v-48h64v48Z" fill="#B5541C"/>
+    <g fill="#6E7551">
+      <ellipse cx="778" cy="504" rx="18" ry="12"/><ellipse cx="806" cy="498" rx="16" ry="11"/><ellipse cx="792" cy="484" rx="14" ry="10"/>
+    </g>
+  </g>
+  <g fill="#9A4715" opacity=".2">
+    <ellipse cx="330" cy="600" rx="150" ry="10"/>
+    <ellipse cx="632" cy="600" rx="90" ry="9"/>
+  </g>
+
+  <rect width="900" height="640" filter="url(#grain5)" opacity=".12" style="mix-blend-mode:multiply"/>
+</svg>
