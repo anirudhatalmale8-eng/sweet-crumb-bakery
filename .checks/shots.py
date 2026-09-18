@@ -75,6 +75,61 @@ with sync_playwright() as p:
         if today != 1:
             problems.append(f"{name}: {today} rows marked as today (expected 1)")
 
+        # WCAG AA contrast on every visible run of text
+        low = page.evaluate("""() => {
+            const px = s => parseFloat(s) || 0;
+            const parse = c => {
+                const m = c.match(/[\\d.]+/g).map(Number);
+                return m.length === 3 ? [...m, 1] : m;
+            };
+            const over = (fg, bg) => fg[3] >= 1 ? fg
+                : [0,1,2].map(i => fg[i] * fg[3] + bg[i] * (1 - fg[3])).concat(1);
+            const lum = c => {
+                const f = c.slice(0,3).map(v => {
+                    v /= 255;
+                    return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
+                });
+                return 0.2126*f[0] + 0.7152*f[1] + 0.0722*f[2];
+            };
+            const ratio = (a, b) => {
+                const [hi, lo] = [lum(a), lum(b)].sort((x,y) => y-x);
+                return (hi + 0.05) / (lo + 0.05);
+            };
+            const bgOf = el => {
+                for (let n = el; n; n = n.parentElement) {
+                    const c = parse(getComputedStyle(n).backgroundColor);
+                    if (c[3] > 0.95) return c;
+                }
+                return [255,255,255,1];
+            };
+            const out = [];
+            document.querySelectorAll('body *').forEach(el => {
+                const hasText = [...el.childNodes].some(
+                    n => n.nodeType === 3 && n.textContent.trim().length > 1);
+                if (!hasText) return;
+                const cs = getComputedStyle(el);
+                if (cs.visibility === 'hidden' || cs.display === 'none') return;
+                if (px(cs.opacity) < 0.95) return;          // mid-animation
+                const r = el.getBoundingClientRect();
+                if (!r.width || !r.height) return;
+                const bg = bgOf(el);
+                const fg = over(parse(cs.color), bg);
+                const size = px(cs.fontSize), weight = parseInt(cs.fontWeight) || 400;
+                const large = size >= 24 || (size >= 18.66 && weight >= 700);
+                const need = large ? 3 : 4.5;
+                const got = ratio(fg, bg);
+                if (got < need) out.push({
+                    sel: el.className || el.tagName,
+                    text: el.textContent.trim().slice(0, 32),
+                    size: Math.round(size), weight,
+                    got: +got.toFixed(2), need
+                });
+            });
+            return out;
+        }""")
+        if low:
+            problems.append(f"{name}: low contrast on {low}")
+
         # tap-target check on mobile
         if name == "mobile":
             small = page.evaluate("""() => [...document.querySelectorAll('a.btn, .nav a, .fab')]

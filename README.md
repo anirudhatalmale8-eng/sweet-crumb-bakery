@@ -126,7 +126,8 @@ at 1200×630 to make a new one, or just replace the PNG with a photo at the same
 
 - **Type**: Fraunces (display) and Karla (body), loaded from Google Fonts.
 - **Accessibility**: keyboard-navigable, visible focus rings, a skip link, labelled
-  images, and text that passes contrast checks against its background.
+  images, and every run of text measured against WCAG AA contrast — the check below
+  fails the build if any of it slips.
 - **Motion**: honours `prefers-reduced-motion` — the ticker and reveals stop for
   visitors who ask their device for less animation.
 - **Print**: `Ctrl/Cmd+P` gives a clean printed menu with the navigation stripped out —
@@ -138,7 +139,10 @@ at 1200×630 to make a new one, or just replace the PNG with a photo at the same
 `.checks/shots.py` drives a real Chromium browser over the page at desktop and phone
 sizes and fails if anything regresses: horizontal overflow, broken images, fonts not
 loading, console errors, tap targets under 40px, the reveal animations getting stuck,
-or the open/closed badge misbehaving.
+the open/closed badge misbehaving, or any text dropping below WCAG AA contrast.
+
+If you change a colour, run this before publishing — it caught three unreadable
+combinations in the footer and on the WhatsApp buttons while this was being built.
 
 ```bash
 python3 -m http.server 8760     # in this folder

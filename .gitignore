@@ -7,3 +7,6 @@
 
 .DS_Store
 Thumbs.db
+
+# copies of the screenshots/recordings sent to the client
+delivery/
